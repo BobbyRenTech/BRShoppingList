@@ -14,6 +14,7 @@
 		AC45CA9E1B025891002F0053 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC45CA9C1B025891002F0053 /* LaunchScreen.xib */; };
 		AC45CAAA1B025891002F0053 /* BRShoppingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45CAA91B025891002F0053 /* BRShoppingListTests.swift */; };
 		AC45CAB41B0259CF002F0053 /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45CAB31B0259CF002F0053 /* ShoppingListTableViewController.swift */; };
+		AC45CAB61B026910002F0053 /* ShoppingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45CAB51B026910002F0053 /* ShoppingListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		AC45CAA81B025891002F0053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC45CAA91B025891002F0053 /* BRShoppingListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRShoppingListTests.swift; sourceTree = "<group>"; };
 		AC45CAB31B0259CF002F0053 /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
+		AC45CAB51B026910002F0053 /* ShoppingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				AC45CA951B025891002F0053 /* ViewController.swift */,
 				AC45CA971B025891002F0053 /* Main.storyboard */,
 				AC45CAB31B0259CF002F0053 /* ShoppingListTableViewController.swift */,
+				AC45CAB51B026910002F0053 /* ShoppingListCell.swift */,
 				AC45CA9A1B025891002F0053 /* Images.xcassets */,
 				AC45CA9C1B025891002F0053 /* LaunchScreen.xib */,
 				AC45CA911B025891002F0053 /* Supporting Files */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC45CA961B025891002F0053 /* ViewController.swift in Sources */,
+				AC45CAB61B026910002F0053 /* ShoppingListCell.swift in Sources */,
 				AC45CA941B025891002F0053 /* AppDelegate.swift in Sources */,
 				AC45CAB41B0259CF002F0053 /* ShoppingListTableViewController.swift in Sources */,
 			);
@@ -413,6 +417,7 @@
 				AC45CAAF1B025891002F0053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC45CAB01B025891002F0053 /* Build configuration list for PBXNativeTarget "BRShoppingListTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				AC45CAB21B025891002F0053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

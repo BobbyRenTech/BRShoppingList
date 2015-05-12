@@ -10,7 +10,7 @@ import UIKit
 
 class ShoppingListTableViewController: UITableViewController {
     
-    var items:NSMutableArray!
+    var items:NSMutableArray = NSMutableArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ShoppingListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        items = NSMutableArray()
+        items = [ ["name":"carrots"], ["name":"bananas"], ["name":"ketchup"] ]
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,15 +41,16 @@ class ShoppingListTableViewController: UITableViewController {
         return self.items.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingListCell", forIndexPath: indexPath) as! ShoppingListCell
 
         // Configure the cell...
+        let row = indexPath.row
+        let dictionary = self.items[row] as! [NSObject:AnyObject]
+        cell.labelName.text = dictionary["name"] as? String
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

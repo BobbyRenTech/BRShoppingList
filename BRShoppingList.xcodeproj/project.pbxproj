@@ -13,6 +13,7 @@
 		AC45CA9B1B025891002F0053 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC45CA9A1B025891002F0053 /* Images.xcassets */; };
 		AC45CA9E1B025891002F0053 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC45CA9C1B025891002F0053 /* LaunchScreen.xib */; };
 		AC45CAAA1B025891002F0053 /* BRShoppingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45CAA91B025891002F0053 /* BRShoppingListTests.swift */; };
+		AC45CAB41B0259CF002F0053 /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45CAB31B0259CF002F0053 /* ShoppingListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		AC45CAA31B025891002F0053 /* BRShoppingListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BRShoppingListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC45CAA81B025891002F0053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC45CAA91B025891002F0053 /* BRShoppingListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRShoppingListTests.swift; sourceTree = "<group>"; };
+		AC45CAB31B0259CF002F0053 /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				AC45CA931B025891002F0053 /* AppDelegate.swift */,
 				AC45CA951B025891002F0053 /* ViewController.swift */,
 				AC45CA971B025891002F0053 /* Main.storyboard */,
+				AC45CAB31B0259CF002F0053 /* ShoppingListTableViewController.swift */,
 				AC45CA9A1B025891002F0053 /* Images.xcassets */,
 				AC45CA9C1B025891002F0053 /* LaunchScreen.xib */,
 				AC45CA911B025891002F0053 /* Supporting Files */,
@@ -214,6 +217,7 @@
 			files = (
 				AC45CA961B025891002F0053 /* ViewController.swift in Sources */,
 				AC45CA941B025891002F0053 /* AppDelegate.swift in Sources */,
+				AC45CAB41B0259CF002F0053 /* ShoppingListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

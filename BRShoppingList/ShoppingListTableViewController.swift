@@ -11,6 +11,7 @@ import UIKit
 class ShoppingListTableViewController: UITableViewController, UIAlertViewDelegate {
     
     var items:NSMutableArray = NSMutableArray()
+    var cart:NSMutableArray = NSMutableArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,23 +35,68 @@ class ShoppingListTableViewController: UITableViewController, UIAlertViewDelegat
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return self.items.count
+        if section == 0 {
+            return self.items.count
+        }
+        else if section == 1 {
+            return self.cart.count
+        }
+        else {
+            return 0;
+        }
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "I need:"
+        }
+        else if section == 1 {
+            return "I have:"
+        }
+        else {
+            return ""
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingListCell", forIndexPath: indexPath) as! ShoppingListCell
 
         // Configure the cell...
+        let section = indexPath.section
         let row = indexPath.row
-        let dictionary = self.items[row] as! [NSObject:AnyObject]
-        cell.labelName.text = dictionary["name"] as? String
+        if section == 0 {
+            let dictionary = self.items[row] as! [NSObject:AnyObject]
+            cell.labelName.text = dictionary["name"] as? String
+        }
+        else if section == 1 {
+            let dictionary = self.cart[row] as! [NSObject:AnyObject]
+            cell.labelName.text = dictionary["name"] as? String
+        }
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        if section == 0 {
+            // clicking on the "I need" section means we found that item
+            let item = items.objectAtIndex(row) as! NSDictionary
+            self.items.removeObjectAtIndex(row)
+            self.cart.addObject(item)
+        }
+        else if section == 1 {
+            // clicking on the "I have" section means we put that item back, so we need it again
+            let item = cart.objectAtIndex(row) as! NSDictionary
+            self.cart.removeObjectAtIndex(row)
+            self.items.addObject(item)
+        }
+        self.tableView.reloadData()
     }
     
     func addItem() {
@@ -74,6 +120,7 @@ class ShoppingListTableViewController: UITableViewController, UIAlertViewDelegat
             self.tableView.reloadData()
         }
     }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

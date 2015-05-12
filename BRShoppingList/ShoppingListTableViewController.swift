@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShoppingListTableViewController: UITableViewController {
+class ShoppingListTableViewController: UITableViewController, UIAlertViewDelegate {
     
     var items:NSMutableArray = NSMutableArray()
 
@@ -21,7 +21,8 @@ class ShoppingListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        items = [ ["name":"carrots"], ["name":"bananas"], ["name":"ketchup"] ]
+        let rightButton = UIBarButtonItem(title: "Add Item", style: UIBarButtonItemStyle.Plain, target: self, action: "addItem")
+        self.navigationItem.rightBarButtonItem = rightButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +52,28 @@ class ShoppingListTableViewController: UITableViewController {
 
         return cell
     }
-
+    
+    func addItem() {
+        var alert = UIAlertView(title: "Enter a new item", message: "", delegate: self, cancelButtonTitle: "cancel", otherButtonTitles: "Add")
+        alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
+        alert.show()
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 0 {
+            // cancel
+            println("canceled")
+        }
+        else {
+            // save
+            let textfield = alertView.textFieldAtIndex(0)
+            let itemName = textfield!.text
+            println("saving item \(itemName)")
+            
+            items.addObject(["name":itemName])
+            self.tableView.reloadData()
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
